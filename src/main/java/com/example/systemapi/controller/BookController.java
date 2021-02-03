@@ -40,7 +40,7 @@ public class BookController {
     return service.postBook(book);
   }
 
-  @DeleteMapping
+  @DeleteMapping("/{isbn}")
   public ResponseEntity<Void> deleteBook(@PathVariable String isbn,
                                          @RequestParam(defaultValue = "false") boolean strict) {
     boolean deleted = service.deleteBook(isbn);
